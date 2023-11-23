@@ -11,7 +11,7 @@ on:
         type: string
       environment:
         description: 'Select the environment for deployment'
-        type: string
+        type: environment
         
       
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
