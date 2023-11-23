@@ -33,4 +33,5 @@ jobs:
           echo "Hello, world!"
           echo "I am a reusable workflow comming from the Pipeline_server"
           echo "my task is to print the ${{ inputs.text }}"
+          echo "${{ inputs.tgt_env }}"
           echo "${{ vars.USER_NAME }} has the phone munber = ${{ secrets.PHONE_NUMBER }}"
