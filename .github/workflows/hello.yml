@@ -9,9 +9,9 @@ on:
       text:
         description: 'Enter text to print'
         type: string
-      tgt_env:
-        description: 'Select the environment for deployment'
+      environment:
         type: string
+        required: true
         
       
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -20,7 +20,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    environment: dev_01
+    environment: ${{ inputs.environment }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -33,5 +33,5 @@ jobs:
           echo "Hello, world!"
           echo "I am a reusable workflow comming from the Pipeline_server"
           echo "my task is to print the ${{ inputs.text }}"
-          echo "${{ inputs.tgt_env }}"
+          echo "${{ inputs.environment }}"
           echo "${{ vars.USER_NAME }} has the phone munber = ${{ secrets.PHONE_NUMBER }}"
