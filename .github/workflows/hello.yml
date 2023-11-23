@@ -4,7 +4,7 @@ name: Hello_world
 
 # Controls when the workflow will run
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       text:
         description: 'Enter text to print'
