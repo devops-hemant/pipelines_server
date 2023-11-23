@@ -9,9 +9,9 @@ on:
       text:
         description: 'Enter text to print'
         type: string
-      environment:
+      tgt_env:
         description: 'Select the environment for deployment'
-        type: environment
+        type: string
         
       
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -20,7 +20,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment: ${{ inputs.tgt_env }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
